@@ -62,9 +62,10 @@ tasks.withType(Test) {
 }
 
 // properties
+/*
 
 task choose_properties(type: Test) {
     useJUnitPlatform {
         includeTags "choose_properties"
     }
-}
+} */
