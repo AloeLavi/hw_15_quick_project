@@ -9,9 +9,9 @@ import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selectors.withText;
 import static com.codeborne.selenide.Selenide.*;
 
-public class SimpleTests extends TestBase {
+public class SalesOrderTests extends TestBase {
 
-    @Disabled
+
     @Test
     void createSalesOrderEmpty(){
         open("/app/#customerorder");
@@ -21,13 +21,9 @@ public class SimpleTests extends TestBase {
         $("[data-test-id='editor-toolbar-save-button']").click();
         $(".dialogMiddleCenter").shouldHave(text("Заказ создан"));
         $("[data-test-id='editor-toolbar-close-button']").click();
+        $("#DocumentTableCustomerOrder").$(".tutorial-document-table-body").shouldHave(text("00001"));
         sleep(5000);
-
-
     }
-
-
-
 
     @AfterEach
     void cleanData(){
