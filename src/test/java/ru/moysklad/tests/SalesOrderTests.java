@@ -3,6 +3,8 @@ package ru.moysklad.tests;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
+import ru.moysklad.pages.SalesOrderList;
+import ru.moysklad.pages.SalesOrderPage;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
@@ -11,16 +13,17 @@ import static com.codeborne.selenide.Selenide.*;
 
 public class SalesOrderTests extends TestBase {
 
-
+    SalesOrderPage salesOrderPage = new SalesOrderPage();
+    SalesOrderList salesOrderList = new SalesOrderList();
     @Test
     void createSalesOrderWithRequiredFields(){
-        open("/app/#customerorder");
-        $(byText("Заказ")).click();
-        $("[data-test-id='SystemFields.sourceAgent']").click();
-        $(withText("ООО \"Покупатель\"")).click();
-        $("[data-test-id='editor-toolbar-save-button']").click();
-        $(".dialogMiddleCenter").shouldHave(text("Заказ создан"));
-        $("[data-test-id='editor-toolbar-close-button']").click();
+        salesOrderList.openList()
+                .createNew();
+
+        salesOrderPage.setCounterparty()
+                .saveDocument()
+                .closeDocument();
+
         $("#DocumentTableCustomerOrder").$(".tutorial-document-table-body").shouldHave(text("00001"));
         sleep(5000);
     }
