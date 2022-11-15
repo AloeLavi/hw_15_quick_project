@@ -13,7 +13,7 @@ public class SalesOrderTests extends TestBase {
 
 
     @Test
-    void createSalesOrderEmpty(){
+    void createSalesOrderWithRequiredFields(){
         open("/app/#customerorder");
         $(byText("Заказ")).click();
         $("[data-test-id='SystemFields.sourceAgent']").click();
@@ -24,6 +24,7 @@ public class SalesOrderTests extends TestBase {
         $("#DocumentTableCustomerOrder").$(".tutorial-document-table-body").shouldHave(text("00001"));
         sleep(5000);
     }
+
 
     @AfterEach
     void cleanData(){
