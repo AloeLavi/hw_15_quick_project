@@ -3,41 +3,75 @@ package ru.moysklad.tests;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
+import ru.moysklad.pages.HeaderPage;
 import ru.moysklad.pages.SalesOrderList;
 import ru.moysklad.pages.SalesOrderPage;
 
-import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.byText;
-import static com.codeborne.selenide.Selectors.withText;
 import static com.codeborne.selenide.Selenide.*;
 
 public class SalesOrderTests extends TestBase {
 
     SalesOrderPage salesOrderPage = new SalesOrderPage();
     SalesOrderList salesOrderList = new SalesOrderList();
+    HeaderPage header = new HeaderPage();
+
+
+
     @Test
     void createSalesOrderWithRequiredFields(){
         salesOrderList.openList()
-                .createNew();
+                .openNew();
 
-        salesOrderPage.setCounterparty()
+        salesOrderPage.setCounterparty("ООО \"Покупатель\"")
                 .saveDocument()
+                .checkDialogMiddleCenter("Заказ создан")
                 .closeDocument();
 
-        $("#DocumentTableCustomerOrder").$(".tutorial-document-table-body").shouldHave(text("00001"));
-        sleep(5000);
+        salesOrderList.checkDocumentExistanceByNumber("00001");
+    }
+
+    @Test
+    void createSalesOrderWithoutRequiredFields() {
+        salesOrderList.openList()
+                .openNew();
+       salesOrderPage.saveDocument();
+     $(byText("Поле должно быть заполнено")).should(exist);
+        salesOrderPage.setCounterparty("ООО \"Покупатель\"")
+                .saveDocument()
+                .checkDialogMiddleCenter("Заказ создан")
+                .closeDocument();
+        salesOrderList.checkDocumentExistanceByNumber("00001");
+    }
+
+
+
+    @Test
+    void copySalesOrder(){
+        salesOrderList.openList()
+                .openNew();
+
+        salesOrderPage.setCounterparty("ООО \"Покупатель\"")
+                .saveDocument()
+                .checkDialogMiddleCenter("Заказ создан");
+        salesOrderPage.copyDocument()
+                .checkDialogMiddleCenter("Заказ скопирован");
+
+        salesOrderList.openList();
+        salesOrderList.checkDocumentExistanceByNumber("00001");
+        salesOrderList.checkDocumentExistanceByNumber("00002");
+
+
     }
 
 
     @AfterEach
     void cleanData(){
-        open("/app/#customerorder");
-        $("#DocumentTableCustomerOrder").$("thead").$("tr", 1).$("th",0).click();
-        $(".pump-title-panel").$(byText("Изменить")).click();
-        $(byText("Удалить")).click();
-        sleep(5000);
-
-
+        salesOrderList.openList();
+        header.clickOnHelp();
+        salesOrderList.DeleteAllDocuments();
+        header.exit();
 
     }
 }
