@@ -4,5 +4,26 @@
 
 ## :rocket: Технологии и инструменты
 
+
+
+## 	Запуск тестов из терминала
+
+### Локальный запуск тестов
+
+### Удаленный запуск тестов
+
+### Параметры сборки
+
+## Allure отчет
+
+### Главная страница Allure-отчета
+
+### Страница отдельного теста
+
+## Уведомления в Telegram с использованием бота
+
 <p align="center">
-<img width="6%" title="IntelliJ IDEA" src="images/logo/intellijidea.svg">
+<img title="Telegram Notifications" src="images/pictures/telegram.png">
+</p>
+
+## Пример видео выполнения теста в Selenoid
