@@ -2,6 +2,7 @@ package ru.moysklad.tests;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import ru.moysklad.pages.HeaderPage;
 import ru.moysklad.pages.SalesOrderList;
@@ -20,6 +21,7 @@ public class SalesOrderTests extends TestBase {
 
     @Disabled
     @Test
+    @DisplayName("Создание заказа покупателя с заполненными обязательными полями")
     void createSalesOrderWithRequiredFields(){
         salesOrderList.openList()
                 .openNew();
@@ -32,6 +34,7 @@ public class SalesOrderTests extends TestBase {
         salesOrderList.checkDocumentExistanceByNumber("00001");
     }
     @Disabled
+    @DisplayName("Попытка создания заказа покупателя без обязательных полей")
     @Test
     void createSalesOrderWithoutRequiredFields() {
         salesOrderList.openList()
@@ -48,6 +51,7 @@ public class SalesOrderTests extends TestBase {
 
 
 @Disabled
+@DisplayName("Копирование заказа покупателя")
     @Test
     void copySalesOrder(){
         salesOrderList.openList()

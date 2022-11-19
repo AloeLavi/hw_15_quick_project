@@ -2,6 +2,7 @@ package ru.moysklad.tests;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import ru.moysklad.pages.*;
 
@@ -13,6 +14,7 @@ public class PurchaseOrderTests extends TestBase {
     HeaderPage header = new HeaderPage();
 
     @Test
+    @DisplayName("Создание заказа поставщику с заполненными обязательными полями")
     void createPurchaseOrderWithRequiredFields(){
               purchaseOrderList.openList()
                 .openNew();
