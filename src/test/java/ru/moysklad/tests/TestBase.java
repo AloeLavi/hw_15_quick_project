@@ -25,6 +25,16 @@ public class TestBase {
 
         Configuration.baseUrl = "https://online.moysklad.ru";
         Configuration.browserSize = "1440x1080";
+
+        String browserName = System.getProperty("browser", "chrome");
+        String browserVersion = System.getProperty("browserVersion", "100");
+        String browserSize = System.getProperty("browserSize",  "1600x800");
+
+        Configuration.browser= browserName;
+        Configuration.browserVersion= browserVersion;
+        Configuration.browserSize = browserSize;
+        Configuration.holdBrowserOpen = true;
+
        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
 
     }
