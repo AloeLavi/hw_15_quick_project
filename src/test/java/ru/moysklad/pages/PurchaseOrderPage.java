@@ -1,9 +1,9 @@
 package ru.moysklad.pages;
 
 import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selectors.withText;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.sleep;
+import static com.codeborne.selenide.Selenide.*;
 
 public class PurchaseOrderPage {
     public PurchaseOrderPage setCounterparty(String counterparty) {
@@ -27,6 +27,12 @@ public class PurchaseOrderPage {
         $(".dialogMiddleCenter").shouldHave(text(message));
         return this;
 
+
+    }
+    public PurchaseOrderPage copyDocument(){
+        $(byText("Изменить")).click();
+        $(byText("Копировать")).click();
+        return this;
 
     }
 }
