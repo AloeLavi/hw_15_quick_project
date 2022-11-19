@@ -2,6 +2,14 @@
 
 ## :page_with_curl:	Содержание
 
+- [Технологии и инструменты](#rocket-технологии-и-инструменты)
+- [Реализованные проверки]
+- [Сборка в Jenkins]
+- [Запуск тестов из терминала](#computer-запуск-тестов-из-терминала)
+- [Allure отчет](#-allure-отчет)
+- [Отчет в Telegram](#-уведомления-в-telegram-с-использованием-бота)
+- [Видеопримеры прохождения тестов](#-уведомления-в-telegram-с-использованием-бота)
+
 ## :rocket: Технологии и инструменты
 
 <p align="center">
@@ -49,8 +57,15 @@ test
 ## <img src="images/logo/allure.png" width="25" height="25"  alt="Allure"/></a> Allure отчет
 
 ### Главная страница Allure-отчета
+<p align="center">
+<img title="allure_main" src="images/pictures/allure_main.png">
+</p>
 
 ### Страница отдельного теста
+
+<p align="center">
+<img title="allure_test" src="images/pictures/allure test.png">
+</p>
 
 ## <img src="images/logo/telegram.png" width="25" height="25"  alt="Telegram"/></a> Уведомления в Telegram с использованием бота
 
@@ -58,4 +73,9 @@ test
 <img title="Telegram Notifications" src="images/pictures/telegram.png">
 </p>
 
-## Пример видео выполнения теста в Selenoid
+## :clapper: Пример видео выполнения теста в Selenoid
+
+> К каждому тесту в отчете прилагается видео. Пример такого видео:
+<p align="center">
+  <img title="Selenoid Video" src="images/video/test.gif">
+</p>
