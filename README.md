@@ -8,22 +8,43 @@
 <img width="6%" title="IntelliJ IDEA" src="images/logo/idea.png">
 <img width="6%" title="Java" src="images/logo/java.png">
 <img width="6%" title="Selenide" src="images/logo/selenide.png">
-<img width="6%" title="Selenoid" src="images/logo/Selenoid.svg">
-<img width="6%" title="Allure Report" src="images/logo/Allure_Report.svg">
-<img width="6%" title="Gradle" src="images/logo/Gradle.svg">
-<img width="6%" title="JUnit5" src="images/logo/JUnit5.svg">
-<img width="6%" title="GitHub" src="images/logo/GitHub.svg">
-<img width="6%" title="Jenkins" src="images/logo/Jenkins.svg">
-<img width="6%" title="Telegram" src="images/logo/Telegram.svg">
+<img width="6%" title="Allure Report" src="images/logo/allure.png">
+<img width="6%" title="Gradle" src="images/logo/gradle.png">
+<img width="6%" title="JUnit5" src="images/logo/junit5.png">
+<img width="6%" title="GitHub" src="images/logo/github.png">
+<img width="6%" title="Jenkins" src="images/logo/jenkins.png">
+<img width="6%" title="Telegram" src="images/logo/telegram.png">
 </p>
 
 ## 	Запуск тестов из терминала
 
 ### Локальный запуск тестов
 
+```
+gradle clean test
+```
+
 ### Удаленный запуск тестов
+```
+clean
+test
+-Dbrowser=${browser}
+-DbrowserVersion=${browserVersion}
+-DbrowserSize=${browserSize}
+-Dremote=${remoteUrl}
+```
 
 ### Параметры сборки
+
+>
+> <code>browser</code> – браузер, в котором будут выполняться тесты (_по умолчанию - <code>chrome</code>_).
+>
+> <code>browserVersion</code> – версия браузера, в которой будут выполняться тесты (_по умолчанию - <code>100</code>_).
+>
+> <code>browserSize</code> – размер окна браузера, в котором будут выполняться тесты (_по умолчанию - <code>1440x1080</code>_).
+> 
+>> <code>remoteUrl</code> – адрес удаленного сервера, на котором будут запускаться тесты.
+
 
 ## Allure отчет
 
