@@ -36,6 +36,7 @@ public class SalesOrderTests extends TestBase {
     void createSalesOrderWithoutRequiredFields() {
         salesOrderList.openList()
                 .openNew();
+
        salesOrderPage.saveDocument();
      $(byText("Поле должно быть заполнено")).should(exist);
         salesOrderPage.setCounterparty("ООО \"Покупатель\"")

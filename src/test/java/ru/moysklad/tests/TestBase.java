@@ -11,14 +11,14 @@ public class TestBase {
 
     @BeforeAll
     static void configure() {
-        Configuration.baseUrl = "https://online.moysklad.ru";
+        Configuration.baseUrl = "https://online-global-5.testms-test.lognex.ru";
         Configuration.browserSize = "1440x1080";
     }
 
     @BeforeEach
     void logIn(){
         open("/");
-        $("#lable-login").setValue("admin@vbagrova2");
+        $("#lable-login").setValue("admin@vbagrova");
         $("#lable-password").setValue("123123");
         $("#submitButton").click();
     }

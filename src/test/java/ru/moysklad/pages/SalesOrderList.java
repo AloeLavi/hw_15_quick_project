@@ -12,7 +12,7 @@ public class SalesOrderList {
     }
     public SalesOrderList openNew(){
         $(byText("Заказ")).click();
-        $("[data-react-widget='customerOrderEditBanner']").shouldHave(text("Заказ покупателя"));
+          $("[data-react-widget='customerOrderEditBanner']").shouldHave(text("Заказ покупателя"));
         return this;
 
     }
