@@ -1,8 +1,11 @@
 package ru.moysklad.tests;
 
 import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import ru.moysklad.pages.*;
+
+import static com.codeborne.selenide.Selenide.sleep;
 
 public class PurchaseOrderTests extends TestBase {
     PurchaseOrderList purchaseOrderList = new PurchaseOrderList();
@@ -11,21 +14,20 @@ public class PurchaseOrderTests extends TestBase {
 
     @Test
     void createPurchaseOrderWithRequiredFields(){
-        purchaseOrderList.openList()
+              purchaseOrderList.openList()
                 .openNew();
-        purchaseOrderPage.setCounterparty("ООО \"Поставщик\"")
+      purchaseOrderPage.setCounterparty("ООО \"Поставщик\"")
                 .saveDocument()
                 .checkDialogMiddleCenter("Заказ создан")
                 .closeDocument();
+      sleep(2000);
         purchaseOrderList.checkDocumentExistanceByNumber("00001");
-
 
     }
 
     @AfterEach
     void cleanAll(){
         purchaseOrderList.openList();
-        header.clickOnHelp();
         purchaseOrderList.DeleteAllDocuments();
         header.exit();
     }

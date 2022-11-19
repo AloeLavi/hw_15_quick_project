@@ -1,6 +1,7 @@
 package ru.moysklad.pages;
 
 import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
@@ -25,7 +26,7 @@ public class PurchaseOrderList {
     public PurchaseOrderList  DeleteAllDocuments(){
         $("#DocumentTablePurchaseOrder").$("thead").$("tr", 1).$("th",0).click();
         $(".pump-title-panel").$(byText("Изменить")).click();
-        $(byText("Удалить")).click();
+        $(".popup-button-menu-bar").$$("tr").findBy(visible).click();
         return this;
 
     }

@@ -18,7 +18,7 @@ public class SalesOrderTests extends TestBase {
     HeaderPage header = new HeaderPage();
 
 
-
+    @Disabled
     @Test
     void createSalesOrderWithRequiredFields(){
         salesOrderList.openList()
@@ -31,7 +31,7 @@ public class SalesOrderTests extends TestBase {
 
         salesOrderList.checkDocumentExistanceByNumber("00001");
     }
-
+    @Disabled
     @Test
     void createSalesOrderWithoutRequiredFields() {
         salesOrderList.openList()
@@ -47,7 +47,7 @@ public class SalesOrderTests extends TestBase {
     }
 
 
-
+@Disabled
     @Test
     void copySalesOrder(){
         salesOrderList.openList()

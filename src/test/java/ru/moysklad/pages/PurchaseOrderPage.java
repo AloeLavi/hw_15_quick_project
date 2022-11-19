@@ -19,7 +19,7 @@ public class PurchaseOrderPage {
 
     }
     public PurchaseOrderPage closeDocument(){
-        $(".tutorial-save-button").click();
+        $(".tutorial-close-button").click();
         return this;
 
     }
