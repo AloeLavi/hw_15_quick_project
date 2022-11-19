@@ -16,15 +16,15 @@
 <img width="6%" title="Telegram" src="images/logo/telegram.png">
 </p>
 
-## 	Запуск тестов из терминала
+## 	:computer: Запуск тестов из терминала
 
-### Локальный запуск тестов
+### :house_with_garden:	Локальный запуск тестов
 
 ```
 gradle clean test
 ```
 
-### Удаленный запуск тестов
+### :earth_asia: Удаленный запуск тестов
 ```
 clean
 test
@@ -34,7 +34,7 @@ test
 -Dremote=${remoteUrl}
 ```
 
-### Параметры сборки
+### :clipboard:	Параметры сборки
 
 >
 > <code>browser</code> – браузер, в котором будут выполняться тесты (_по умолчанию - <code>chrome</code>_).
@@ -43,16 +43,16 @@ test
 >
 > <code>browserSize</code> – размер окна браузера, в котором будут выполняться тесты (_по умолчанию - <code>1440x1080</code>_).
 > 
->> <code>remoteUrl</code> – адрес удаленного сервера, на котором будут запускаться тесты.
+> <code>remoteUrl</code> – адрес удаленного сервера, на котором будут запускаться тесты.
 
 
-## Allure отчет
+## <img src="images/logo/allure.png" width="25" height="25"  alt="Allure"/></a> Allure отчет
 
 ### Главная страница Allure-отчета
 
 ### Страница отдельного теста
 
-## Уведомления в Telegram с использованием бота
+## <img src="images/logo/telegram.png" width="25" height="25"  alt="Telegram"/></a> Уведомления в Telegram с использованием бота
 
 <p align="center">
 <img title="Telegram Notifications" src="images/pictures/telegram.png">
