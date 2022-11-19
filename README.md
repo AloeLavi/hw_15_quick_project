@@ -23,7 +23,7 @@
 ## Уведомления в Telegram с использованием бота
 
 <p align="center">
-<img title="Telegram Notifications" src="resources/images/pictures/telegram.png">
+<img title="Telegram Notifications" src="images/pictures/telegram.png">
 </p>
 
 ## Пример видео выполнения теста в Selenoid
