@@ -4,7 +4,6 @@
 
 - [Технологии и инструменты](#rocket-технологии-и-инструменты)
 - [Реализованные проверки]
-- [Сборка в Jenkins]
 - [Запуск тестов из терминала](#computer-запуск-тестов-из-терминала)
 - [Allure отчет](#-allure-отчет)
 - [Отчет в Telegram](#-уведомления-в-telegram-с-использованием-бота)
@@ -22,7 +21,23 @@
 <img width="6%" title="GitHub" src="images/logo/github.png">
 <img width="6%" title="Jenkins" src="images/logo/jenkins.png">
 <img width="6%" title="Telegram" src="images/logo/telegram.png">
+<img width="6%" title="Telegram" src="images/logo/selenoid.png">
+
 </p>
+
+## 	:heavy_check_mark:	Реализованные проверки
+
+- Проверки документа "Заказ поставщику"
+  - Создание документа 
+  - Копирование документа
+  - Попытка создания без обязательных полей
+- Проверки документа "Заказ покупателя"
+  - Создание документа
+  - Копирование документа
+  - Попытка создания без обязательных полей
+
+
+
 
 ## 	:computer: Запуск тестов из терминала
 
@@ -53,6 +68,10 @@ test
 > 
 > <code>remoteUrl</code> – адрес удаленного сервера, на котором будут запускаться тесты.
 
+### <img src="images/logo/jenkins.png" width="25" height="25"  alt="Allure"/></a>	Страница сборки в Jenkins
+<p align="center">
+<img title="allure_main" src="images/pictures/jenkins_page.png">
+</p>
 
 ## <img src="images/logo/allure.png" width="25" height="25"  alt="Allure"/></a> Allure отчет
 
