@@ -35,7 +35,7 @@ public class TestBase {
         Configuration.browserSize = browserSize;
         Configuration.holdBrowserOpen = true;
 
-       Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
+       Configuration.remote = "https://user1:1234@selenoid.autotests.cloud1/wd/hub";
 
     }
 
