@@ -35,7 +35,7 @@ public class TestBase {
         Configuration.browser= browserName;
         Configuration.browserVersion= browserVersion;
         Configuration.browserSize = browserSize;
-        Configuration.holdBrowserOpen = true;
+    //    Configuration.holdBrowserOpen = true;
        Configuration.remote = remote;
 
     }
